@@ -15,7 +15,7 @@ app.use((req,res,next)=>{
 app.use(express.static("public"));
 app.use(express.json());
 
-app.get("/api",(_req,res)=>{
+app.get("/api/hanafiah",(_req,res)=>{
     res.send("Ali ")
 });
 
