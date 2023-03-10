@@ -2,3 +2,7 @@ fungsi
 folder api yaitu  buat mengdeploy api
 
 .gitignore buat pengeculian
+
+
+
+aliganteng123
