@@ -3,13 +3,11 @@ import pkg from "pg";
 const { Client } = pkg;
 
 export const client = new Client({
-    host: "localhost",
+    host: "db.gfyxmythpcokpikhlvpv.supabase.co",
     user: "postgres",
     port: 5432,
     password: "aliganteng123",
-    database: "integer",
 });
 await client.connect();
-const result = await client.query("select * from mahasiswa");
+//  await client.query("select * from mahasiswa");
 
-console.log(result.rows[1].nama);
