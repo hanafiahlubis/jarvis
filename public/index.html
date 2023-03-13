@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jarvis</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        caption, th,td{
+           padding: 2px 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Jarvis</h1>
+    <table>
+        <caption> Table Mahasiswa</caption>
+    </table>
+    <script>
+      async function tampil_mahasiswa() {
+        const res = await fetch("/api/mahasiswa");
+        const data = await res.json();
+
+        const table = document.querySelector("table");  
+        data.forEach(e => {
+            const tr = document.createElement("tr");
+            const th = document.createElement("th");   
+            const td = document.createElement("td");     
+            const td2 = document.createElement("td");    
+            const th2 = document.createElement("th");   
+            const td3 = document.createElement("td");   
+            const td4 = document.createElement("td");   
+            
+            th.textContent = "NIM";
+            td.textContent = ":";
+
+            td2.textContent = e.nim;
+
+            th2.textContent = "NAMA";
+            td3.textContent = ":";
+            td4.textContent = e.nama;
+            
+
+            tr.appendChild(th);
+            tr.appendChild(td);
+            tr.appendChild(td2);
+            tr.appendChild(th2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            table.appendChild(tr);
+
+        });
+        
+        
+
+      }tampil_mahasiswa();
+    </script>
+  </body>
+</html>

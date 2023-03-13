@@ -5,10 +5,8 @@ const app = express();
 
 
 // middweleerr yaitu ketika kita mengakses maka akan masuk ke middlewer terlebuh dahulu
-app.use((req, res, next) => {
-    if (req.url === "/") {
-        res.send("Ali Hanafiah");
-    }
+app.use((req, _res, next) => {
+
     console.log(req.url);
     next();
 })
@@ -26,7 +24,7 @@ app.get("/api/salam", (_req, res) => {
 app.get("/api/mahasiswa", async (_req, res) => {
     const result = await client.query("select * from mahasiswa");
     res.send(result.rows);
-    console.log(result.rows[1].nama);
 })
+
 
 app.listen(3000, () => console.log("Berhasil Berjalan"));
